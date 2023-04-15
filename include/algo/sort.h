@@ -32,17 +32,18 @@
 
 /*** Sorts */
 typedef int (*order)(void const *l, void const *r);
-void sort(void **d, order f);
+void sort(void **data, order f);
 
 /*** Priority queues */
-/****** Define implementation here */
-peque createpq(void const ** const data, order f);
-void getpqmax(void const ** const entry, peque p);
-void putpqmax(peque p, void const * const entry);
-void *peekpqmax(peque p);
-void getpqmin(void const ** const entry, peque p);
-void putpqmin(peque p, void const * const entry);
-void *peekpqmin(peque p);
+struct peque;
+typedef struct peque peque;
+peque *createpq(void const ** const data, order f);
+void getpqmax(void const ** const entry, peque *p);
+void putpqmax(peque *p, void const * const entry);
+void *peekpqmax(peque *p);
+void getpqmin(void const ** const entry, peque *p);
+void putpqmin(peque *p, void const * const entry);
+void *peekpqmin(peque *p);
 
 
 
